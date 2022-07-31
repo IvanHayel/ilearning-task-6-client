@@ -1,0 +1,27 @@
+$modal-border-color: rgb(147 112 219);
+
+#modal-modal-title {
+  text-align: center;
+  color: mediumpurple;
+  font-size: larger;
+  font-weight: bold;
+}
+
+#modal-modal-description {
+  color: rgb(0 0 0 / 80%);
+  font-size: large;
+  margin-bottom: 3vh;
+}
+
+.modal-main-box {
+  display: block;
+  position: absolute;
+  padding: 30px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  border: 1px solid $modal-border-color;
+  background-color: white;
+  box-shadow: 0 0 15px 1px $modal-border-color;
+}
