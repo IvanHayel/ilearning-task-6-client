@@ -43,7 +43,6 @@ export const Home = observer(() => {
     await fetchFakeData(currentPayload);
   }
   const handleErrorSliderChanged = async (event) => {
-    console.log(event.target.value);
     const currentPayload = {...payload};
     currentPayload.errorRate = event.target.value;
     setPayload(currentPayload);
