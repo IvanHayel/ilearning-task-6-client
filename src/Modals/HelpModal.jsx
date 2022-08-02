@@ -29,10 +29,7 @@ export const HelpModal = () => {
               page 🖱️<br />
               2. To fine-tune the error rate, use the arrows on your
               keyboard ⬆️ ➡️ ⬅️ ⬇️<br />
-              3. Error rate don't work on the email field, so that it is
-              possible
-              to track the operation of the seed and data changes ⚠️<br />
-              4. To monitor requests sent to the server, simply open the
+              3. To monitor requests sent to the server, simply open the
               developer
               console 🖥️<br />
             </Typography>

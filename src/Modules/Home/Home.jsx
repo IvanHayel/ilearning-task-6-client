@@ -36,7 +36,7 @@ export const Home = observer(() => {
   }
   const handleNationalityChanged = async (event) => {
     const currentPayload = {...payload};
-    currentPayload.nationality = event.target.value;
+    currentPayload.locale = event.target.value;
     currentPayload.page = 1;
     setPayload(currentPayload);
     setPageSize(1);
@@ -79,7 +79,7 @@ export const Home = observer(() => {
               onBlur={handleSeedChanged}
               className="seed-text-field"
               label="Seed" variant="outlined"
-              color="secondary"
+              color="secondary" type="number"
           />
           <FormControl sx={{width: '100%'}}>
             <InputLabel id="select-label">Nationality</InputLabel>
@@ -117,6 +117,7 @@ export const Home = observer(() => {
             columns={columns}
             rowHeight={40}
             className={'data-grid rdg-light'}
+            rowKeyGetter={row => row.index}
             onScroll={handleTableScroll}
             cellNavigationMode={'changeRow'}
         />
@@ -133,14 +134,11 @@ export const Home = observer(() => {
 });
 
 const columns = [
-  {key: 'id', name: 'ID', width: '12%'},
-  {key: 'person', name: 'Person', width: '15%'},
-  {key: 'country', name: 'Country', width: '10%'},
-  {key: 'city', name: 'Locality', width: '10%'},
-  {key: 'street', name: 'Street', width: '15%'},
-  {key: 'postcode', name: 'Postal Code', width: '10%'},
-  {key: 'email', name: 'Email', width: '15%'},
-  {key: 'phone', name: 'Phone', width: '15%'},
+  {key: 'index', name: 'Index', width: '5%'},
+  {key: 'id', name: 'ID', width: '15%'},
+  {key: 'name', name: 'Person', width: '20%'},
+  {key: 'address', name: 'Address', width: '40%'},
+  {key: 'phone', name: 'Phone', width: '20%'},
 ];
 
 const isScrollReachBottom = ({currentTarget}) => {
